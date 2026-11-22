@@ -57,3 +57,57 @@
 @keyframes heroBoxLevitate{0%,100%{transform:translateY(0) rotate(-5deg) rotateY(-5deg)}50%{transform:translateY(-17px) rotate(-2deg) rotateY(5deg)}}
 @keyframes heroOrbitBreathe{0%,100%{transform:scale(1) rotate(0deg);opacity:.7}50%{transform:scale(1.035) rotate(7deg);opacity:.35}}
 @media(prefers-reduced-motion:reduce){.hero-spark-particle,.hero-floating-charm,.hero-orbit,.hero-product-box,.hero-star-glow,.hero-heart-float{animation:none!important;will-change:auto}.hero-product-box{transform:rotate(-5deg)}}
+
+/* Small-screen refinements — preserve the existing desktop design */
+html,body{max-width:100%;overflow-x:clip}
+main{min-width:0}
+img,svg{max-width:100%}
+@media(max-width:767px){
+ .hero-particle-scene{width:100%;max-width:100%;overflow:hidden;min-height:340px}
+ .hero-product-box{width:min(62%,240px);padding:12px;border-radius:1.5rem}
+ .hero-product-box>div{padding:12px;border-radius:1.1rem}
+ .hero-product-box .doodle-tile{height:clamp(3.15rem,16vw,4.9rem);border-radius:9px}
+ .hero-product-box .doodle-tile .snack-doodle{width:70%;height:70%}
+ .hero-product-box .grid{gap:7px}
+ .hero-product-box .serif{font-size:1rem}
+ .hero-product-box .mb-4{margin-bottom:9px}
+ .hero-orbit-outer{width:min(88vw,330px);height:min(88vw,330px)}
+ .hero-orbit-inner{width:min(74vw,280px);height:min(74vw,280px)}
+ .hero-floating-charm{width:clamp(44px,14vw,70px);height:clamp(44px,14vw,70px);border-radius:17px}
+ .hero-floating-charm .snack-doodle{width:62%;height:62%}
+ .hero-star-glow{font-size:2rem}
+ .hero-heart-float{font-size:1.6rem}
+ .hero-spark-particle:nth-child(n+15){display:none}
+ .hero-actions{gap:10px}
+ .hero-actions .btn{min-height:46px}
+ .poster-placeholder{height:clamp(290px,82vw,345px)}
+ .poster-food img{height:clamp(57px,18vw,78px)}
+ .poster-food-name{font-size:clamp(9px,2.6vw,11px)}
+ .poster-heading .serif{font-size:clamp(13px,3.6vw,17px)}
+ .poster-heading>span:last-child{font-size:clamp(9px,2.7vw,11px)}
+ .poster-bottom-copy .serif{font-size:clamp(12px,3.3vw,15px)}
+ .poster-samosa,.poster-pathiri{top:16%}
+ .poster-cutlet{top:41%}
+ .poster-unnakaya,.poster-special{bottom:17%}
+}
+@media(max-width:390px){
+ .hero-actions{display:grid;grid-template-columns:1fr}
+ .hero-actions .btn{width:100%}
+ .hero-particle-scene{min-height:310px}
+ .hero-product-box{width:60%}
+ .hero-floating-charm{width:43px;height:43px;border-radius:13px}
+ .poster-food img{height:56px}
+ .poster-food-note{font-size:8px}
+ .poster-heading{top:9px}
+ .poster-placeholder{height:295px}
+}
+@media(max-width:520px){
+ input,select,textarea{font-size:16px!important;max-width:100%;min-width:0}
+ button,a{touch-action:manipulation}
+ .btn{min-height:44px}
+ .hero-particle-field{inset:0}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ .hero-particle-scene *{scroll-behavior:auto}
+}
