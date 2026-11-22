@@ -9,7 +9,7 @@ const boxes = [
   { id: "grand", name: "Grand Malabar Box", price: 899, pieces: "17 items", contents: "4 samosas, 3 cutlets, 3 unnakaya, 3 chatti pathiri pieces, 3 ada, 1 rotating Malabar speciality" },
 ];
 
-const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\\D/g, "") ?? "";
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") ?? "";
 
 export default function OrderPage() {
   const [boxId, setBoxId] = useState("feast");
@@ -44,7 +44,7 @@ export default function OrderPage() {
   ].join("\n"), [name, phone, selected, variant, quantity, date, fulfilment, address, subtotal, notes]);
 
   function submitOrder() {
-    if (!name.trim() || !/^\\+?[0-9\\s-]{10,15}$/.test(phone.trim()) || !date || (fulfilment === "Delivery" && !address.trim())) {
+    if (!name.trim() || !/^\+?[0-9\s-]{10,15}$/.test(phone.trim()) || !date || (fulfilment === "Delivery" && !address.trim())) {
       setError("Please complete your name, a valid contact number, pre-order date and delivery address (if applicable).");
       return;
     }
