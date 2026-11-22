@@ -16,3 +16,34 @@
 .doodle-float .snack-doodle{width:100%;height:100%}
 @media(max-width:640px){.doodle-float{width:45px;height:45px}.snack-stage{height:11rem}}
 @media(prefers-reduced-motion:reduce){.snack-doodle,.doodle-tile{transition:none}}
+
+/* Floating editorial food photography — soft dimensional movement */
+.hero-scene{isolation:isolate;perspective:1100px;transform-style:preserve-3d}
+.hero-halo{position:absolute;inset:9%;border:1px solid #b58a5560;border-radius:50%;transform:rotate(-16deg);pointer-events:none}
+.hero-halo-two{inset:16%;border-style:dashed;opacity:.5;transform:rotate(12deg)}
+.hero-photo{position:absolute;overflow:hidden;border:7px solid #fffaf2;background:#ead8c2;box-shadow:0 20px 42px #4a172535,0 4px 10px #4a17251b;will-change:transform}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.hero-photo:hover img{transform:scale(1.08)}
+.hero-photo-main{width:62%;height:70%;max-width:320px;max-height:390px;z-index:3;border-radius:46% 46% 8px 8px;animation:float-main 7s ease-in-out infinite}
+.hero-photo-inner{width:100%;height:100%;position:relative}
+.hero-photo-main img{object-position:center 45%}
+.hero-photo-label{position:absolute;bottom:0;left:0;right:0;padding:14px 4px;background:linear-gradient(transparent,#4a1725df);color:#fff9ef;font-size:9px;letter-spacing:.17em;text-align:center}
+.hero-photo-top{width:34%;height:37%;max-width:170px;max-height:165px;left:1%;top:2%;z-index:4;transform:rotate(-12deg);border-radius:18px;animation:float-top 6.1s ease-in-out infinite}
+.hero-photo-right{width:37%;height:35%;max-width:177px;max-height:158px;right:-1%;top:14%;z-index:4;transform:rotate(11deg);border-radius:18px;animation:float-right 7.3s ease-in-out infinite}
+.hero-photo-bottom{width:37%;height:31%;max-width:178px;max-height:145px;right:3%;bottom:0%;z-index:4;transform:rotate(-9deg);border-radius:18px;animation:float-bottom 6.7s ease-in-out infinite}
+.hero-photo:not(.hero-photo-main) span{position:absolute;bottom:0;left:0;right:0;text-align:center;padding:7px 2px;background:#fffaf2e8;color:#4a1725;font-size:8px;font-weight:700;letter-spacing:.15em}
+.hero-seal{position:absolute;left:0;bottom:7%;z-index:5;width:115px;height:115px;display:flex;align-items:center;justify-content:center;flex-direction:column;border-radius:50%;background:#4a1725;color:#f6ebdd;text-align:center;line-height:1.45;font-size:9px;letter-spacing:.1em;border:4px double #d7b98e;box-shadow:0 8px 24px #4a172538;transform:rotate(-12deg)}
+.hero-seal strong{font-family:Georgia,serif;font-size:13px;font-weight:normal}.hero-seal span{font-size:21px}
+.hero-spark{position:absolute;z-index:2;font-size:43px;color:#b58a55}.hero-spark-one{top:2%;right:19%}.hero-spark-two{bottom:13%;left:18%}
+@keyframes float-main{0%,100%{transform:translateY(0) rotate(-5deg) rotateY(-4deg)}50%{transform:translateY(-16px) rotate(-1deg) rotateY(4deg)}}
+@keyframes float-top{0%,100%{transform:translateY(0) rotate(-13deg) rotateY(-8deg)}50%{transform:translateY(-15px) rotate(-8deg) rotateY(3deg)}}
+@keyframes float-right{0%,100%{transform:translateY(0) rotate(11deg) rotateY(8deg)}50%{transform:translateY(13px) rotate(6deg) rotateY(-4deg)}}
+@keyframes float-bottom{0%,100%{transform:translateY(0) rotate(-9deg) rotateY(-7deg)}50%{transform:translateY(-14px) rotate(-4deg) rotateY(4deg)}}
+.editorial-stage{height:250px;display:block;border:6px solid #fff9ef;box-shadow:0 12px 30px #4a17251b;position:relative}
+.editorial-stage:before,.editorial-stage:after{display:none}
+.editorial-stage>img{height:100%;width:100%;object-fit:cover;transition:transform .7s ease}
+.group:hover .editorial-stage>img{transform:scale(1.065)}
+.editorial-stage-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,#4a1725c9);color:#fff9ef;padding:30px 14px 12px;font-size:10px;letter-spacing:.18em}
+.editorial-stage-stamp{position:absolute;right:12px;top:12px;width:73px;height:73px;border-radius:50%;background:#f6ebdde9;color:#4a1725;display:grid;place-content:center;text-align:center;line-height:1.5;font-size:9px;font-weight:bold;transform:rotate(11deg)}
+@media(max-width:640px){.hero-scene{min-height:410px}.hero-photo-main{width:60%;height:66%}.hero-seal{width:87px;height:87px;font-size:7px;left:1%;bottom:10%}.hero-seal strong{font-size:11px}.hero-photo-top{left:2%;top:4%}.hero-photo-right{right:1%;top:15%}.hero-photo-bottom{right:1%;bottom:1%}.editorial-stage{height:230px}}
+@media(prefers-reduced-motion:reduce){.hero-photo{animation:none!important;will-change:auto}.hero-photo img,.editorial-stage>img{transition:none}}
