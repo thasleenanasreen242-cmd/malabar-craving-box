@@ -44,19 +44,19 @@ export default function PaymentPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#F6EBDD] px-5 py-8 text-[#30201E]">
+    <main className="min-h-screen bg-[#F6EBDD] px-4 py-6 text-[#30201E] sm:px-5 sm:py-8">
       <div className="mx-auto max-w-lg">
         <Link href="/" className="text-xs uppercase tracking-[.16em] text-[#75513B]">← Malabar Craving Box</Link>
-        <section className="paper mt-6 border border-[#E8D7C1] p-7 shadow-sm md:p-9">
+        <section className="paper mt-6 min-w-0 border border-[#E8D7C1] p-4 shadow-sm sm:p-7 md:p-9">
           <div className="text-center">
             <div className="eyebrow text-[#9a7047]">SECURE YOUR CRAVING</div>
-            <h1 className="serif mt-3 text-4xl text-[#4A1725]">Make your payment</h1>
+            <h1 className="serif mt-3 text-[clamp(2rem,9vw,2.5rem)] leading-tight text-[#4A1725]">Make your payment</h1>
             <p className="mt-3 text-sm leading-6 text-[#75513B]">Pay for your Malabar Craving Box order using GPay or another UPI app.</p>
           </div>
 
           <div className="mt-8 border border-[#d9c5ab] bg-[#fffaf2] p-5 text-center">
             <div className="eyebrow text-[#9a7047]">AMOUNT TO PAY</div>
-            {validAmount ? <div className="serif mt-2 text-5xl text-[#4A1725]">₹{numericAmount.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div> : <div className="mt-3 text-sm text-[#7b2334]">Payment amount is missing or invalid.</div>}
+            {validAmount ? <div className="serif mt-2 break-words text-[clamp(2rem,9vw,3rem)] text-[#4A1725]">₹{numericAmount.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</div> : <div className="mt-3 text-sm text-[#7b2334]">Payment amount is missing or invalid.</div>}
             {orderRef && <div className="mt-3 text-xs tracking-wide text-[#75513B]">ORDER REF: {orderRef}</div>}
           </div>
 
