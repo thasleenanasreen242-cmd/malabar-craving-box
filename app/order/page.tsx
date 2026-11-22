@@ -67,14 +67,14 @@ export default function OrderPage() {
   return (
     <main className="min-h-screen bg-[#F6EBDD] text-[#30201E]">
       <div className="bg-[#4A1725] px-4 py-2 text-center text-[9px] tracking-[.22em] text-[#F6EBDD]">HOMEMADE WITH LOVE IN MALABAR · PRE-ORDERS</div>
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-6">
+      <header className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-5 sm:px-5 sm:py-6">
         <Link href="/" className="leading-none"><span className="serif block text-xl font-bold tracking-[.08em] text-[#4A1725]">MALABAR</span><span className="mt-1 block text-[9px] tracking-[.36em] text-[#75513B]">CRAVING BOX</span></Link>
         <Link href="/" className="text-[10px] uppercase tracking-[.16em] text-[#75513B]">← Back to home</Link>
       </header>
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 pb-16 pt-5 lg:grid-cols-[1.3fr_.7fr]">
-        <section className="paper border border-[#E8D7C1] p-6 md:p-9">
+      <div className="mx-auto grid max-w-6xl min-w-0 gap-6 px-4 pb-12 pt-5 sm:px-5 sm:pb-16 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,.7fr)] lg:gap-8">
+        <section className="paper min-w-0 border border-[#E8D7C1] p-4 sm:p-6 md:p-9">
           <div className="eyebrow text-[#9a7047]">YOUR MALABAR MOMENT</div>
-          <h1 className="serif mt-3 text-4xl text-[#4A1725] md:text-5xl">Build your box order.</h1>
+          <h1 className="serif mt-3 text-[clamp(2rem,9vw,3rem)] leading-tight text-[#4A1725] md:text-5xl">Build your box order.</h1>
           <p className="mt-3 max-w-xl text-sm leading-6 text-[#75513B]">Choose your favourite box, tell us your preference and send your pre-order request. We’ll confirm availability and delivery charges before the order is final.</p>
 
           <div className="mt-8">
@@ -101,8 +101,8 @@ export default function OrderPage() {
           <div className="mt-8 border-t border-[#d9c5ab] pt-7">
             <label className="eyebrow text-[#75513B]">06 · YOUR DETAILS</label>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <input aria-label="Your name" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} className="border border-[#d9c5ab] bg-[#fffaf2] p-3 text-sm outline-none focus:border-[#4A1725]" />
-              <input aria-label="Your WhatsApp number" placeholder="Your WhatsApp / mobile number" value={phone} onChange={(e) => setPhone(e.target.value)} className="border border-[#d9c5ab] bg-[#fffaf2] p-3 text-sm outline-none focus:border-[#4A1725]" />
+              <input autoComplete="name" aria-label="Your name" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)} className="border border-[#d9c5ab] bg-[#fffaf2] p-3 text-sm outline-none focus:border-[#4A1725]" />
+              <input type="tel" inputMode="tel" autoComplete="tel" aria-label="Your WhatsApp number" placeholder="Your WhatsApp / mobile number" value={phone} onChange={(e) => setPhone(e.target.value)} className="border border-[#d9c5ab] bg-[#fffaf2] p-3 text-sm outline-none focus:border-[#4A1725]" />
             </div>
             {fulfilment === "Delivery" && <textarea aria-label="Delivery address" placeholder="Full delivery address, including area and PIN code" rows={3} value={address} onChange={(e) => setAddress(e.target.value)} className="mt-4 w-full border border-[#d9c5ab] bg-[#fffaf2] p-3 text-sm outline-none focus:border-[#4A1725]" />}
             <textarea aria-label="Order notes" placeholder="Any notes for us? (optional)" rows={2} value={notes} onChange={(e) => setNotes(e.target.value)} className="mt-4 w-full border border-[#d9c5ab] bg-[#fffaf2] p-3 text-sm outline-none focus:border-[#4A1725]" />
@@ -112,7 +112,7 @@ export default function OrderPage() {
           <p className="mt-3 text-center text-[10px] leading-5 text-[#75513B]">Your order is a request until availability, delivery and final pricing are confirmed by the business.</p>
         </section>
 
-        <aside className="h-fit border border-[#d9c5ab] bg-[#fffaf2] p-6 lg:sticky lg:top-6">
+        <aside className="h-fit min-w-0 border border-[#d9c5ab] bg-[#fffaf2] p-4 sm:p-6 lg:sticky lg:top-6">
           <div className="eyebrow text-[#9a7047]">YOUR ORDER SUMMARY</div>
           <h2 className="serif mt-3 text-2xl text-[#4A1725]">{selected.name}</h2>
           <p className="mt-1 text-xs text-[#75513B]">{variant} · {selected.pieces}</p>
