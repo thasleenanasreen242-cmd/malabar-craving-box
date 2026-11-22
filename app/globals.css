@@ -1,3 +1,18 @@
 @import "tailwindcss";
 :root{--cream:#F6EBDD;--maroon:#4A1725;--burgundy:#681F32;--brown:#75513B;--ink:#30201E;--gold:#B58A55;--beige:#E8D7C1}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}button{cursor:pointer}.serif{font-family:Georgia,"Times New Roman",serif}.paper{background-color:var(--cream);background-image:radial-gradient(#75513b14 .7px,transparent .7px);background-size:9px 9px}.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:10px;font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;background:var(--maroon);color:var(--cream);font-size:11px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--maroon);transition:.2s}.btn:hover{background:var(--burgundy)}.btn-outline{background:transparent;color:var(--maroon)}.btn-outline:hover{color:var(--cream)}.doodle{color:var(--brown);opacity:.42}
+
+/* Malabar Craving Box — dimensional butter-paper doodles */
+.snack-doodle{color:#75513b;filter:drop-shadow(1px 2px 0 #b58a55) drop-shadow(3px 5px 3px #4a172526);overflow:visible;transition:transform .35s ease,filter .35s ease}
+.doodle-tile{display:flex;height:6rem;align-items:center;justify-content:center;border:1px solid #b58a5538;border-radius:13px;background:linear-gradient(145deg,#fff9ef 0%,#f0dfc9 100%);box-shadow:inset 2px 2px 5px #fff9ef, inset -3px -4px 8px #b58a5520, 4px 6px 12px #4a17251c}
+.doodle-tile .snack-doodle{width:4.1rem;height:4.1rem}
+.doodle-tile:hover .snack-doodle{transform:translateY(-4px) rotate(-5deg) scale(1.06);filter:drop-shadow(2px 3px 0 #b58a55) drop-shadow(5px 8px 5px #4a172533)}
+.snack-stage{position:relative;overflow:hidden;border:1px solid #b58a5538;background-color:#ead8c2;background-image:radial-gradient(#75513b22 .8px,transparent .8px);background-size:12px 12px;box-shadow:inset 0 0 25px #fff9ef80}
+.snack-stage:before,.snack-stage:after{position:absolute;content:"";width:145px;height:145px;border:1px dashed #75513b35;border-radius:50%}
+.snack-stage:after{width:115px;height:115px;border-style:solid;border-color:#b58a5540}
+.snack-stage .snack-doodle{position:relative;z-index:1}
+.stage-spark{position:absolute;right:18px;top:14px;color:#9a7047;font-family:Georgia,serif;font-size:25px;text-shadow:2px 3px 0 #b58a5555}
+.doodle-float{width:62px;height:62px;color:#9a7047;opacity:.8;filter:drop-shadow(2px 4px 2px #4a172522)}
+.doodle-float .snack-doodle{width:100%;height:100%}
+@media(max-width:640px){.doodle-float{width:45px;height:45px}.snack-stage{height:11rem}}
+@media(prefers-reduced-motion:reduce){.snack-doodle,.doodle-tile{transition:none}}
