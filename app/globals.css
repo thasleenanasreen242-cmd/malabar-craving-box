@@ -36,3 +36,24 @@
 .poster-bottom-copy .serif{font-size:13px}
 .poster-bottom-copy>span:last-child{font-size:9px;color:#75513b}
 @media(max-width:640px){.poster-placeholder{height:19rem}.poster-food img{height:65px}.poster-heading .serif{font-size:14px}}
+
+/* Hero only — dimensional, slowly drifting particles and floating objects */
+.hero-particle-scene{isolation:isolate;perspective:1100px;transform-style:preserve-3d}
+.hero-particle-field{position:absolute;inset:-4%;overflow:hidden;pointer-events:none;z-index:1;mask-image:radial-gradient(ellipse at center,#000 45%,transparent 90%)}
+.hero-spark-particle{position:absolute;display:block;border-radius:50%;background:radial-gradient(circle at 30% 28%,#fff9df 0%,#e7bf79 30%,#b9803e 70%,#8e4b35 100%);box-shadow:0 0 9px #dca3578c,0 0 21px #dca35735,inset -1px -1px 3px #8a543d70;opacity:.85;animation:heroParticleDrift 8s ease-in-out infinite;will-change:transform}
+.hero-spark-particle:nth-child(4n){background:radial-gradient(circle at 30% 30%,#fff,#d7a6a0 50%,#ae6f68);box-shadow:0 0 10px #c48c8d6b}
+.hero-spark-particle:nth-child(7n){background:radial-gradient(circle at 30% 30%,#fff,#b3d5c3 50%,#6fae9b)}
+.hero-floating-charm{animation:heroCharmFloat 6s ease-in-out infinite;will-change:transform}
+.hero-floating-charm:nth-of-type(3){animation-delay:-1.4s}
+.hero-floating-charm:nth-of-type(4){animation-delay:-2.7s}
+.hero-floating-charm:nth-of-type(5){animation-delay:-4.1s}
+.hero-orbit{pointer-events:none;animation:heroOrbitBreathe 11s ease-in-out infinite}
+.hero-orbit-inner{animation-delay:-4s}
+.hero-product-box{z-index:5;animation:heroBoxLevitate 7s ease-in-out infinite;transform-style:preserve-3d;will-change:transform}
+.hero-star-glow{animation:heroCharmFloat 5s ease-in-out infinite;z-index:6}
+.hero-heart-float{animation:heroCharmFloat 6.7s ease-in-out infinite reverse;z-index:6}
+@keyframes heroParticleDrift{0%,100%{transform:translate3d(0,10px,-60px) scale(.72);opacity:.35}50%{transform:translate3d(12px,-19px,85px) scale(1.4);opacity:.95}}
+@keyframes heroCharmFloat{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -15px;rotate:5deg}}
+@keyframes heroBoxLevitate{0%,100%{transform:translateY(0) rotate(-5deg) rotateY(-5deg)}50%{transform:translateY(-17px) rotate(-2deg) rotateY(5deg)}}
+@keyframes heroOrbitBreathe{0%,100%{transform:scale(1) rotate(0deg);opacity:.7}50%{transform:scale(1.035) rotate(7deg);opacity:.35}}
+@media(prefers-reduced-motion:reduce){.hero-spark-particle,.hero-floating-charm,.hero-orbit,.hero-product-box,.hero-star-glow,.hero-heart-float{animation:none!important;will-change:auto}.hero-product-box{transform:rotate(-5deg)}}
