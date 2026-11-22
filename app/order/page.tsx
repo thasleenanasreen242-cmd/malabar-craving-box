@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 
 const boxes = [
@@ -22,6 +22,11 @@ export default function OrderPage() {
   const [address, setAddress] = useState("");
   const [notes, setNotes] = useState("");
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const requestedBox = new URLSearchParams(window.location.search).get("box");
+    if (requestedBox && boxes.some((box) => box.id === requestedBox)) setBoxId(requestedBox);
+  }, []);
 
   const selected = boxes.find((box) => box.id === boxId) ?? boxes[1];
   const subtotal = selected.price * quantity;
